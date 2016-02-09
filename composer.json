@@ -1,0 +1,20 @@
+{
+    "name": "madlux/viewmodel",
+    "type": "plugin",
+    "description": "Laravel viewmodel",
+    "autoload": {
+        "psr-4": { "Madlux\\ViewModel\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Madlux\\ViewModel\\": "src/" }
+    },
+	"homepage": "https://github.com/madlux/viewmodel",
+	"authors": [
+        {
+            "name": "Nikita Baray",
+            "email": "nikita.baray@gmail.com"
+        }
+    ],
+    "require": {
+    }
+}
