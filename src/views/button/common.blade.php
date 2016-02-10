@@ -16,7 +16,7 @@
 						@endforeach
 					},
 					type : type,
-					success : function(e){alert(e)}
+					success : function(e){  }
 				})
 			})
 		})

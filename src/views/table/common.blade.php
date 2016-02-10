@@ -14,14 +14,17 @@
 				@foreach($columns['data']['row']['cell'] as $row)
 					<td>
 						@if (!isset($row['model']))
-						<a @if(isset($row['href'])) href="{!! route($row['href'],[$column[$row['data']]]) !!}" @endif
-						>{!! $column[$row['name']] !!}</a>
+							<a @if(isset($row['href'])) 
+								href="{!! $row['href']($column) !!}"
+						@endif
+						>{!! $row['name']($column) !!}</a>
 						@else
 							{!! 
 								view('view_model::select/common')
-									->with('options',$column[$row['data']])
+									->with('options',$row['name']($column))
 									->with('column_name',$row['column_name']) 
 									->with('selected',$column[$row['selected']])
+									->with('href',$row['href']($column))
 							!!}
 						@endif
 					</td>

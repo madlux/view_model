@@ -19,6 +19,11 @@ class ViewModelServiceProvider extends ServiceProvider
 	public function boot()
 	{
 		$this->loadViewsFrom(__DIR__.'/views', 'view_model');
+		
+		$this->publishes([
+			__DIR__.'/assets' => public_path('view_model'),
+		], 'public');
+		
 		/*
 		$this->publishes([
 			__DIR__.'config/settings.php' => config_path('settings.php'),

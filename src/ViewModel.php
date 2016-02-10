@@ -47,6 +47,8 @@ class ViewModel
 			//$class = isset($value['class']) ? $value['style'] : 'btn btn-success';
 			$columns = $value['type']=='table' ? $value['columns'] : null;
 			$title = isset($value['title']) ? $value['title'] : null;
+			$placeholder = isset($value['placeholder']) ? $value['placeholder'] : false;
+			$val = isset($value['value']) ? $value['value'] : false;
 			
 			$new_array[$key] = view('view_model::'.$value['type'].'/'.$style, [
 				'title' => $title,
@@ -56,6 +58,8 @@ class ViewModel
 				'type' => $type,
 				'source_data' => $source_data,
 				'columns' => $columns,
+				'placeholder' => $placeholder,
+				'value' => $val,
 				//'class' => $class,
 			]);
 			
