@@ -42,13 +42,18 @@ class ViewModel
 		{
 			$style = !isset($value['style']) ? 'common' : $value['style'];
 			$type = (isset($array['type_action']) && $value['type']=='button') ? $array['type_action'] : "POST";
+			
 			$action = (isset($array['action']) && $value['type']=='button') ? $array['action'] : false;
+			$href = isset($value['action']) ? $value['action'] : false;
+			
 			$source_data = $value['type']=='button' ?  array_keys($array['form']) : false;
 			//$class = isset($value['class']) ? $value['style'] : 'btn btn-success';
 			$columns = $this->initColumns($value);
 			$title = isset($value['title']) ? $value['title'] : null;
 			$placeholder = isset($value['placeholder']) ? $value['placeholder'] : false;
 			$val = isset($value['value']) ? $value['value'] : false;
+			
+			$callback = isset($value['callback']) ? $value['callback'] : false;
 			
 			$new_array[$key] = view('view_model::'.$value['type'].'/'.$style, [
 				'title' => $title,
@@ -60,6 +65,8 @@ class ViewModel
 				'columns' => $columns,
 				'placeholder' => $placeholder,
 				'value' => $val,
+				'href' => $href,
+				'callback' => $callback,
 				//'class' => $class,
 			]);
 			
@@ -112,6 +119,9 @@ class ViewModel
 		}else{
 			$columns = null;
 		}
+		
+		$columns['beforecurrentmonth']=$beforecurrentmonth->modify( '-1 month' )->format('Y-m');
+		$columns['aftercurrentmonth']=$aftercurrentmonth->modify( '+2 month' )->format('Y-m');
 		
 		return $columns;
 	}
