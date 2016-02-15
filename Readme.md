@@ -5,28 +5,28 @@ View model
 Elements
 -----------
 
-*button
-*calendar
-*date
-*image
-*input
-*search
-*select
-*table
-*text
+- button
+- calendar
+- date
+- image
+- input
+- search
+- select
+- table
+- text
 
 Options
 -----------
 
-*type
-*action
-*href
-*source_data
-*columns
-*title
-*placeholder
-*value
-*callback
+- type
+- action
+- href
+- source_data
+- columns
+- title
+- placeholder
+- value
+- callback
 
 For example
 -----------
