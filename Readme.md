@@ -1,8 +1,35 @@
-## Описание
+## About
 
 View model
 
-## Пример
+Elements
+---------
+
+-button
+-calendar
+-date
+-image
+-input
+-search
+-select
+-table
+-text
+
+Options
+---------
+
+-type
+-action
+-href
+-source_data
+-columns
+-title
+-placeholder
+-value
+-callback
+
+For example
+---------
  
 ``` bash
 $viewModel=new ViewModel(array(
